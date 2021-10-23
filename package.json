@@ -1,0 +1,10 @@
+{
+  "name": "find-ip",
+  "main": "index.js",
+  "version": "1.0.1",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
