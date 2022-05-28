@@ -4,7 +4,7 @@ Find the real IP address
 
 ## Usage
 
-```bash
+```zsh
 http https://find-ip.vercel.app --body
 ```
 
