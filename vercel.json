@@ -4,6 +4,8 @@
     { "source": "/x", "destination": "/x" }
   ],
   "functions": {
-    "x/index.ts": {}
+    "x/index.ts": {
+      "runtime": "@vercel/node"
+    }
   }
 }
