@@ -2,5 +2,5 @@ import { type ConnInfo, serve } from 'https://deno.land/std@0.195.0/http/server.
 
 serve((request: Request, { remoteAddr }: ConnInfo) => {
   const { hostname } = remoteAddr as Deno.NetAddr
-  return Response.json({ address: hostname })
+  return new Response(`${hostname}\n`)
 })
