@@ -1,18 +1,17 @@
 import { handle } from '@hono/node-server/vercel'
 import { type Context, Hono } from 'hono'
+import axios from 'axios'
 
 const app = new Hono()
 
 app.get('/info', async (c: Context) => {
   // console.log()
-  return c.json({a:c.req.header['x-real-ip']})
+  return c.json(c.req.headers)
 })
 
 export default handle(app)
 
 // import type { VercelRequest, VercelResponse } from '@vercel/node'
-// import axios from 'axios'
-
 // export default async (request: VercelRequest, response: VercelResponse) => {
 //   const ip = request.query.ip || request.headers['x-real-ip']
 
