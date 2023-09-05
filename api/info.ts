@@ -12,17 +12,20 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 
     if (data.info === 'OK' && typeof data.city === 'string') {
       const { province, city, adcode, rectangle } = data
-      const [pointA, pointB] = rectangle?.split(';')
-      const longitude = pointA
-      const latitude = pointB
-      // 116.4951289,23.56898281
+      const [pointA, pointB] = String(rectangle)
+        .split(';')
+        .map((point) => point.split(',').map((num) => parseFloat(num)))
+
+      const longitude = (pointA[0] + pointB[0]) / 2
+      const latitude = (pointA[1] + pointB[1]) / 2
 
       return response.json({
         longitude,
         latitude,
         province,
         adcode,
-        city
+        city,
+        ip
       })
     }
 
