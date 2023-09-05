@@ -15,7 +15,12 @@ app.get('/:domain', async (c: Context) => {
       nameServer: { ipAddr: '8.8.8.8' }
     })
 
-    return c.json(result)
+    return c.json(
+      result.map((value) => ({
+        type: 'NS',
+        value
+      }))
+    )
   } catch ({ message }) {
     return c.json({ message }, 400)
   }
