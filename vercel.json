@@ -3,9 +3,15 @@
     { "source": "/", "destination": "/api" },
     { "source": "/info", "destination": "/api/info" }
   ],
+  "redirects": [
+    {
+      "source": "/ipinfo",
+      "destination": "https://foundation.youdao.com/ip/ipinfo"
+    }
+  ],
   "headers": [
     {
-      "source": "/(info?)",
+      "source": "/(info)?",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,POST" }
