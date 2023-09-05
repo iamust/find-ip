@@ -4,8 +4,8 @@ import { type Context, Hono } from 'hono'
 const app = new Hono()
 
 app.get('/info', async (c: Context) => {
-  console.log(c.req.header['x-real-ip'])
-  return c.text('ok')
+  // console.log()
+  return c.json({a:c.req.header['x-real-ip']})
 })
 
 export default handle(app)
