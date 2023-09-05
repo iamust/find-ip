@@ -14,7 +14,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       const { province, city, adcode, rectangle } = data
       const [pointA, pointB] = String(rectangle)
         .split(';')
-        .map((point) => point.split(',').map((num) => parseFloat(num)))
+        .map((point) => point.split(','))
 
       const longitude = pointA
       const latitude = pointB
