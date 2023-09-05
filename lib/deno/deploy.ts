@@ -5,7 +5,7 @@ import { cors } from 'https://deno.land/x/hono@v3.5.8/middleware.ts'
 const app = new Hono()
 
 app.use(
-  '/*',
+  '*',
   cors({
     origin: '*',
     allowMethods: ['GET', 'OPTIONS', 'POST']
@@ -17,7 +17,7 @@ app.get('/', (c: Context) => {
 })
 
 app.get('/:domain', async (c: Context) => {
-  const domain = c.req.param('domain')
+  const { domain } = c.req.param()
 
   //   const result = await Deno.resolveDns(domain, 'A')
   const result = await Deno.resolveDns(domain, 'NS', {
