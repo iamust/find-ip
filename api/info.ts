@@ -4,7 +4,8 @@ import { handle } from 'hono/vercel'
 const app = new Hono()
 
 app.get('/info', async (c: Context) => {
-  return c.text(c.req.header['x-real-ip'])
+  console.log(c.req.header['x-real-ip'])
+  return c.text('ok')
 })
 
 export default handle(app)
