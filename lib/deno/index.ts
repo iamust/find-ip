@@ -1,6 +1,6 @@
 import { type ConnInfo, serve } from 'https://deno.land/std@0.195.0/http/server.ts'
 import { type Context, Hono } from 'https://deno.land/x/hono@v3.5.8/mod.ts'
-import { cors } from 'https://deno.land/x/hono@v3.5.8/middleware/cors/index.ts'
+import { cors } from 'https://deno.land/x/hono@v3.5.8/middleware.ts'
 
 const app = new Hono()
 app.use('/ns|ip/*', cors({
