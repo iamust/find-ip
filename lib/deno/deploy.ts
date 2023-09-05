@@ -12,7 +12,7 @@ app.get('/:domain', async (c: Context) => {
 
   try {
     const result = await Deno.resolveDns(domain, 'NS', {
-      nameServer: { ipAddr: '1.1.1.1' }
+      nameServer: { ipAddr: '8.8.8.8' }
     })
 
     return c.json(result)
