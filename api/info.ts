@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
+import random from 'lodash/random'
 import axios from 'axios'
 
 export default async (request: VercelRequest, response: VercelResponse) => {
@@ -14,10 +15,10 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       const { province, city, adcode, rectangle } = data
       const [pointA, pointB] = String(rectangle)
         .split(';')
-        .map((point) => point.split(',').map((num) => Number(num)))
+        .map((point) => point.split(','))
 
-      const longitude = (pointA[0] + pointB[0]) / 2
-      const latitude = (pointA[1] + pointB[1]) / 2
+      const longitude = [pointA[0], pointB[0]]
+      const latitude = [pointA[1], pointB[1]]
 
       return response.json({
         longitude,
