@@ -3,12 +3,6 @@
     { "source": "/", "destination": "/api" },
     { "source": "/info", "destination": "/api/info" }
   ],
-  "redirects": [
-    {
-      "source": "/ipinfo",
-      "destination": "https://foundation.youdao.com/ip/ipinfo"
-    }
-  ],
   "headers": [
     {
       "source": "/(info)?",
