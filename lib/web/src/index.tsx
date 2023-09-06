@@ -6,7 +6,6 @@
 // import store from './store'
 // import App from './app'
 // import './styles/tailwind.css'
-// import './styles/index.css'
 
 // const client = new QueryClient()
 // const app = createApp(App, {
