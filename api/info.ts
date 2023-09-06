@@ -30,7 +30,11 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       })
     }
 
-    return response.json({})
+    if (data.status === '1') {
+      return response.json({})
+    }
+
+    throw new Error(data)
   } catch ({ message }) {
     return response.status(400).json({ message })
   }
