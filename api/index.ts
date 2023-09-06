@@ -6,7 +6,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   const ip = request.headers['x-real-ip']
   const domain =
     request.method === 'POST'
-      ? request.body.domain
+      ? request.body?.domain
       : request.query.domain || request.query.d
 
   if (isEmpty(domain)) {
