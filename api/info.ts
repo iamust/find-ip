@@ -17,8 +17,8 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         .split(';')
         .map((point) => point.split(','))
 
-      const longitude = random(0, 1)
-      const latitude = [pointA, pointB]
+      const longitude = [pointA, pointB][random(0, 1)]
+      const latitude = [pointA, pointB][random(0, 1)]
 
       return response.json({
         longitude,
