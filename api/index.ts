@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import isEmpty from 'lodash/isEmpty'
+import isIP from 'validator/lib/isIP'
 import dns from 'dns/promises'
 
 export default async (request: VercelRequest, response: VercelResponse) => {
@@ -9,8 +9,12 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       ? request.body?.host
       : request.query.host || request.query.hostname
 
-  if (isEmpty(host)) {
+  if (!host) {
     return response.json({ ip })
+  }
+
+  if (isIP(host)) {
+    return response.redirect(`/info?ip=${host}`)
   }
 
   try {
