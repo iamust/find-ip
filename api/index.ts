@@ -4,17 +4,17 @@ import dns from 'dns/promises'
 
 export default async (request: VercelRequest, response: VercelResponse) => {
   const ip = request.headers['x-real-ip']
-  const domain =
+  const host =
     request.method === 'POST'
-      ? request.body?.domain
-      : request.query.domain || request.query.d
+      ? request.body?.host
+      : request.query.host || request.query.hostname
 
-  if (isEmpty(domain)) {
+  if (isEmpty(host)) {
     return response.json({ ip })
   }
 
   try {
-    const result = await dns.lookup(domain, { all: true })
+    const result = await dns.lookup(host, { all: true })
     return response.json(
       result.map(({ address, family }) => ({
         type: { 4: 'A', 6: 'AAAA' }[family],
