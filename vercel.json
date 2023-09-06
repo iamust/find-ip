@@ -1,7 +1,8 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/api" },
-    { "source": "/info", "destination": "/api/info" }
+    { "source": "/info", "destination": "/api/info" },
+    { "source": "/-/:domain", "destination": "/api" }
   ],
   "headers": [
     {
