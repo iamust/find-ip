@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 import isEmpty from 'lodash/isEmpty'
-import dns from 'node:dns/promises'
+import dns from 'dns/promises'
 
 async function dnsLookup(domain: string) {
   try {
@@ -12,8 +12,10 @@ async function dnsLookup(domain: string) {
 
 export default async (request: VercelRequest, response: VercelResponse) => {
   const address = request.headers['x-real-ip']
-  const domain = (request.query.domain ||
-                  request.query.d)
+  const domain =
+    request.method === 'POST'
+      ? request.body.domain
+      : request.query.domain || request.query.d
 
   return isEmpty(domain)
     ? response.json({ address })
