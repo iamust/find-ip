@@ -1,28 +1,20 @@
+import { Link } from '@solidjs/router'
+import { Show } from 'solid-js/web'
 
-// interface LogoProps {
-//   className: string
-//   title: string
-//   src?: string
-// }
-
-export default function Logo() {
-  return (
-    <span class="font-semibold text-transparent tracking-widest bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">{'asdsd'}</span>
-  )
+interface LogoProps {
+  class: string
+  title: string
+  src?: string
 }
 
-// export default function ({
-//   className = '',
-//   title = 'Logo',
-//   src
-// }: LogoProps) {
-//   return (
-//     <Link className={`flex items-center h-14 ${className}`} to="/">
-//       <If condition={src}>
-//         <Then>
-//           <img alt={title} src={src} />
-//         </Then>
-//         <Else>
-//           </span>
-//         </Else>
-//       </If>
+export default function Logo(props: LogoProps) {
+  return (
+    <Link class={`flex items-center h-14 ${props.class}`} href="/">
+      <Show when={true} fallback={<img alt={props.title} src={props.src} />}>
+        <span class="font-semibold text-transparent tracking-widest bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">
+          {props.title}
+        </span>
+      </Show>
+    </Link>
+  )
+}

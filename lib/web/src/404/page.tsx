@@ -1,9 +1,5 @@
-
-
 export default function NotFoundPage() {
-  return (
-    <div>__NotFoundPage__</div>
-  )
+  return <div>__NotFoundPage__</div>
 }
 
 // // import DefaultLayout from '../layouts/default'
