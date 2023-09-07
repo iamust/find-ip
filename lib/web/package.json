@@ -1,5 +1,5 @@
 {
-  "name": "@razeos/find-ip",
+  "name": "find-ip",
   "version": "1.0.1",
   "license": "MIT",
   "scripts": {

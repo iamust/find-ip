@@ -1,27 +1,31 @@
-import { Router } from '@solidjs/router'
+import { Router, Routes, Route } from '@solidjs/router'
 import { render } from 'solid-js/web'
+// import homePage from './home/page'
+// import notFoundPage from './404'
 import './index.css'
 
 const root = document.getElementById('app')
 
 function App() {
-  return <div>__App__</div>
+  return <Router>
+    <Routes>
+      {/* <Route path="/" component={homePage} />
+      <Route path="*" component={notFoundPage} /> */}
+    </Routes>
+  </Router>
 }
 
 render(() => <App />, root)
 
-// import { createElement } from 'react'
-// import { render } from 'react-dom'
-// export function createApp(app: any, props: any) {
-//   const component = createElement(app, props, null)
-//   function mount(identifier: string) {
-//     const appId = identifier.replace(/#/, '')
-//     const appEl = document.getElementById(appId)
-//     render(component, appEl)
-//     return component
-//   }
-//   return {
-//     component,
-//     mount
-//   }
-// }
+// // import homePage from '../pages/home'
+// // import notFoundPage from '../pages/
+// // export default [
+// //   {
+// //     path: '/',
+// //     component:
+// //   },
+// //   {
+// //     path: '*',
+// //     component:
+// // //   }
+// // // ]
