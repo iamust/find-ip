@@ -1,6 +1,6 @@
 import { type JSXElement } from 'solid-js/types'
-import Header from './includes/header'
-import Footer from './includes/footer'
+import Header from '../includes/header'
+import Footer from '../includes/footer'
 
 interface LayoutProps {
   page: Record<string, any>
