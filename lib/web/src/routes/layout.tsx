@@ -17,12 +17,8 @@ export function PageLayout(props: LayoutProps) {
   )
 }
 
-// export default function ({ page, children }: LayoutProps) {
 //     <DefaultLayout page={page}>
-
 // // // import { QueryClientProvider as Query } from 'react-query'
-// // import type { ReactNode } from 'react'
-// // export default function DefaultLayout({ page, children }: LayoutProps) {
 // //   return (
 // //     <>
 // //       <Helmet>
