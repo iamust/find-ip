@@ -17,11 +17,14 @@ export function PageLayout(props: LayoutProps) {
   )
 }
 
-//     <DefaultLayout page={page}>
-// // // import { QueryClientProvider as Query } from 'react-query'
-// //   return (
-// //     <>
-// //       <Helmet>
-// //         <title>{page?.title}</title>
-// //       </Helmet>
-// //       <div className="min-h-screen">{children}</div>
+// //     <DefaultLayout page={page}>
+// // // // import { QueryClientProvider as Query } from 'react-query'
+// // //   return (
+// // //     <>
+// // //       <Helmet>
+// // //         <title>{page?.title}</title>
+// // //       </Helmet>
+// // //       <div className="min-h-screen">{children}</div>
+// import { QueryClient } from 'react-query'
+// const client = new QueryClient()
+// client,

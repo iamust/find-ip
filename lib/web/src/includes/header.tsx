@@ -5,7 +5,7 @@ export default function Header() {
     <header>
       <div class="max-w-4xl mx-auto">
         <div class="flex justify-between">
-          <Logo />
+          <Logo class='' title='find-ip/lib/web' />
         </div>
       </div>
     </header>
